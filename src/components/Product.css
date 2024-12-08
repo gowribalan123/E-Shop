@@ -1,0 +1,53 @@
+/* ProductInquiryForm.css */
+
+.product{
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  .success{
+    color:rgb(14, 14, 168);
+  }
+  .cust
+  {
+    padding: 10px;
+    background-color: aliceblue;
+    color: rgb(33, 13, 65);
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    justify-content: center;
+    
+    background: linear-gradient(to right, #7e8ccf, #583059);
+    color: #fff;
+    
+  }
+  .form-control{
+    width: 500px;
+  }
+textarea{
+  height: 150px;
+}
+.alert {
+  padding: 20px;
+  margin: 20px;;
+  background-color: #3522c7; /* Green */
+  color: white;
+  margin-bottom: 15px;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
