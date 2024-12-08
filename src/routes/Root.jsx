@@ -11,11 +11,11 @@ import Navigation from '../components/Navigation.jsx';
 const router = createBrowserRouter(
     createRoutesFromElements(
     
-        <Route path="/" element={<Navigation/>}>
-         <Route path="/" element={<Home/>} />
-         <Route path="/product" element={<Product/>} />
-        <Route path="/productlist" element={<ProductList/>} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/ShoppingCart/" element={<Navigation/>}>
+         <Route path="/ShoppingCart/" element={<Home/>} />
+         <Route path="/ShoppingCart/product" element={<Product/>} />
+      
+        <Route path="/ShoppingCart/login" element={<Login />} />
     </Route>
     )
 )

@@ -37,12 +37,12 @@ const Navigation = () => {
     <div className="container-fluid justify-content-end collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav " style={{fontSize:'20px',fontWeight:'500',gap:'10px'}}>
 
-        <li className="nav-item"><Link to='/#' className="nav-link ">HOME</Link></li>
-       <li className="nav-item"><Link to='/product' className="nav-link ">PRODUCTS</Link></li>
+        <li className="nav-item"><Link to='/ShoppingCart/#' className="nav-link ">HOME</Link></li>
+       <li className="nav-item"><Link to='/ShoppingCart/product' className="nav-link ">PRODUCTS</Link></li>
    
         
        
-        <Link to='/login' > <Button  variant="primary" style={{fontSize:'20px',fontWeight:'500',backgroundColor:'purple'}}>LOGIN       </Button></Link>
+        <Link to='/ShoppingCart/login' > <Button  variant="primary" style={{fontSize:'20px',fontWeight:'500',backgroundColor:'purple'}}>LOGIN       </Button></Link>
      
                
         </ul>

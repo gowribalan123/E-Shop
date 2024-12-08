@@ -13,7 +13,7 @@ const Home = () => {
     <div class="container m-5 ">
         <h1>Welcome to My E-commerce Store</h1>
         <p>Find the best products at unbeatable prices!</p>
-        <a href="#product" class="btn btn-primary"><Link to='/product' className="nav-link ">Shop Now</Link></a>
+        <a href="#product" class="btn btn-primary"><Link to='/ShoppingCart/product' className="nav-link ">Shop Now</Link></a>
         
         <div class="p-5"> 
         <img src="bg4.png" height="200px"  width="300px" alt="" />
