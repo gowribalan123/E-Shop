@@ -10,7 +10,7 @@ const Product = () => {
 
   useEffect(() => {  
     const fetchProducts = async () => {  
-      const response = await axios.get(`http://localhost:3001/products`); // Replace with your API endpoint  
+      const response = await axios.get(`https://productsapi-2hx0.onrender.com/products`); // Replace with your API endpoint  
       setProducts(response.data);  
     };  
     fetchProducts();  
@@ -23,7 +23,7 @@ const Product = () => {
       <div className=" row  " >  
         {products.map(product => (  
           <div   key={product._id}  className='col-sm-3 col-md-3 text-center' style={{marginBottom: '10px'}}>  
-            <div className="card mb-3">  
+            <div  className="card mb-3">  
             <div>
                 <img src={product.image} alt={product.name} className="card-img-top p-1 md-2  rounded-pill shadow-sm" style={{width: '120px', height: '100px'}} />  
             </div>

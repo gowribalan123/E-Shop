@@ -1,4 +1,4 @@
-import React  from 'react'
+import React,{useState}  from 'react'
 import {Outlet , Link} from 'react-router-dom'
 import { Nav,Container, Row, Col,Navbar} from 'react-bootstrap';
 import Button  from 'react-bootstrap/Button';
@@ -6,12 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  
 
 const Navigation = () => {
-
+  const [isAuthenticated,setIsAuthenticated]=useState(false)
+  const handleLogin=()=>{
+    setIsAuthenticated(true)
+  }
+  const handlleLogout=()=>{
+    setIsAuthenticated(false)
+  }
   
   return (
      <div >
         
-<header className="">
+<header>
 
 <Navbar className="bg-body-tertiary  ">
 <Container >
@@ -29,20 +35,25 @@ const Navigation = () => {
 
    
   <Nav  className="ml-auto m-2 " >  
-    <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target=".navbarNav"
+    <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
-                    </Button>
+     </Button>
                            
     <div className="container-fluid justify-content-end collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav " style={{fontSize:'20px',fontWeight:'500',gap:'10px'}}>
 
-        <li className="nav-item"><Link to='/ShoppingCart/#' className="nav-link ">HOME</Link></li>
+        <li className="nav-item"><Link to='/ShoppingCart/' className="nav-link ">HOME</Link></li>
        <li className="nav-item"><Link to='/ShoppingCart/product' className="nav-link ">PRODUCTS</Link></li>
    
         
        
-        <Link to='/ShoppingCart/login' > <Button  variant="primary" style={{fontSize:'20px',fontWeight:'500',backgroundColor:'purple'}}>LOGIN       </Button></Link>
+       {!isAuthenticated?(<Link to='/ShoppingCart/login' > <Button  variant="primary" style={{fontSize:'20px',fontWeight:'500',backgroundColor:'purple'}}>LOGIN       </Button></Link>
+        ):(
+          <button onClick={handlleLogout} class='nav-link'>Logout</button>
+        
+        )}
+      
      
                
         </ul>
