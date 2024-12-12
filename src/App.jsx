@@ -23,14 +23,14 @@ const handlleLogout=()=>{
     <Router>
     <header>
 
-<Navbar className="bg-body-tertiary   ">
+<Navbar className="bg-body-tertiary   " >
 
 <Container >
          <Navbar.Brand >
             <img
               src="cart-icon-2.png"
-              width="30"
-              height="30"
+              width="40"
+              height="50"
               className="d-inline-block align-top"
               alt="Profile logo"
             /><span style={{ color: "blue",fontWeight:'500px',fontSize:'40px' }}>ShopEase</span>
@@ -39,12 +39,12 @@ const handlleLogout=()=>{
   </Container>
 
    
-     <nav className='navbar navbar-expand-lg p-3   ' >
+     <nav className='navbar navbar-expand-lg  p-3   ' >
      <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
      </Button>
-          <div className='container-fluid justify-content-end collapse navbar-collapse  'id="navbarNav" >
+          <div className='container-fluid justify-content-end collapse navbar-collapse  'id="navbarNav"  >
             <ul className='navbar-nav ' style={{fontSize:'20px',fontWeight:'500',gap:'10px'}}>
               <li className='nav-item'>
                <Link className='nav-link' to='/ShoppingCart/'>Home</Link> 

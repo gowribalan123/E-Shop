@@ -19,20 +19,20 @@ const Product = () => {
 
   return (  
 <>
-    <div className="container  hero   p-4 "  >  
+    <div className="container  p-4"  style={{backgroundColor:'#8781d6e3'}}>  
       
-      <div className=" row  " >  
+      <div className=" row   " >  
         {products.map(product => (  
-          <div   key={product._id}  className='col-sm-3 col-md-3 text-center' style={{marginBottom: '10px'}}>  
-            <div  className="card mb-3">  
+          <div   key={product._id}  className='col-sm-3 col-md-3 text-center ' style={{marginBottom: '10px'}}>  
+            <div  className="card mb-3 shadow-sm " style={{width: '300px',height:'400px'}}>  
             <div>
-                <img src={product.image} alt={product.name} className="card-img-top p-1 md-2  rounded-pill shadow-sm" style={{width: '120px', height: '100px'}} />  
+                <img src={product.image} alt={product.name} className="card-img-top p-1 md-2   shadow-sm" style={{width: '200px', height: '200px'}} />  
             </div>
              <div className="card-body">  
-                <h5 className="card-title" style={{height:'100px'}}>{product.name}</h5>  
+                <h5 className="card-title" style={{height:'80px'}}>{product.name}</h5>  
                   
                 <p className="card-text"><strong>Price: ${product.price}</strong></p>  
-                <Link to={`/products/${product._id}`} className="btn btn-warning " style={{backgroundColor:'yellow', borderRadius:'20px',color:'black'}}>Add to Cart</Link>  
+                <Link to={`/products/${product._id}`} className="btn btn-warning " style={{ borderRadius:'20px',width:'150px'}}><strong>Add to Cart</strong></Link>  
               </div>  
             </div>  
           </div>  
