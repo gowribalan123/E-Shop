@@ -44,7 +44,7 @@ const handlleLogout=()=>{
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
      </Button>
-          <div className='container-fluidcjustify-content-end collapse navbar-collapse ' id="navbarNav">
+          <div className='container-fluid justify-content-end collapse navbar-collapse ' id="navbarNav">
             <ul className='navbar-nav ' style={{fontSize:'20px',fontWeight:'500',gap:'10px'}}>
               <li className='nav-item'>
                <Link className='nav-link' to='/ShoppingCart/'>Home</Link> 

@@ -7,10 +7,11 @@ import '../components/Product.css'
 
 const Product = () => {  
   const [products, setProducts] = useState([]);  
-
+  const apiUrl=import.meta.env.VITE_PRODUCTS_API
+    
   useEffect(() => {  
     const fetchProducts = async () => {  
-      const response = await axios.get(`https://productsapi-2hx0.onrender.com/products`); // Replace with your API endpoint  
+      const response = await axios.get(`${apiUrl}/products`); // Replace with your API endpoint  
       setProducts(response.data);  
     };  
     fetchProducts();  
