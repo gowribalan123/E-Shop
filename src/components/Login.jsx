@@ -45,11 +45,11 @@ const Login = ({onLogin}) => {
  <label className="text-muted" for="exampleInputEmail1">
    Email address </label><br />
 <input {...register("email")} type="email" className="m-1 " style={{width:'250px'}} placeholder='Enter email'/> <br />
-<small id="emailHelp" class="form-text text-muted "  style={{fontSize:'small'}}>
+<small id="emailHelp" className="form-text text-muted "  style={{fontSize:'small'}}>
 We don't share email with anyone</small>
 </div><br />
-<div class="form-group">
- <label class="text-muted" for="exampleInputPassword1">
+<div className="form-group">
+ <label className="text-muted" for="exampleInputPassword1">
    Password 
    </label ><br />
 <input {...register("password")} type="password" className="m-1" style={{width:'250px'}}  placeholder='Enter password'/>  <br />
