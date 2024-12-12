@@ -15,7 +15,7 @@ const Login = ({onLogin}) => {
     const navigate=useNavigate()
     const checkLogin = (data)=>{
       console.log("Form data",data)
-      axios.post(`${apiUrl}/users/login`,data)
+      axios.post(`${apiUrl}/Users/login`,data)
       .then(response=>{
         console.log(response.data)
         onLogin()
