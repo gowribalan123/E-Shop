@@ -11,11 +11,13 @@ import { useNavigate } from 'react-router-dom';
 const Login = ({onLogin}) => {
 
     const {register,handleSubmit,formState:{errors}} = useForm();
+
    const apiUrl=import.meta.env.VITE_PRODUCTS_API
+   
     const navigate=useNavigate()
     const checkLogin = (data)=>{
       console.log("Form data",data)
-      axios.post(`${apiUrl}/Users/login`,data)
+      axios.post(`${apiUrl}/users/login`,data)
       .then(response=>{
         console.log(response.data)
         onLogin()

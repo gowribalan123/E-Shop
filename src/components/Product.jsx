@@ -11,8 +11,13 @@ const Product = () => {
     
   useEffect(() => {  
     const fetchProducts = async () => {  
+      try
+      {
       const response = await axios.get(`${apiUrl}/products`); // Replace with your API endpoint  
       setProducts(response.data);  
+      }catch(error){
+        console.error(error)
+      }
     };  
     fetchProducts();  
   }, []);  
