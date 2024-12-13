@@ -39,13 +39,16 @@ const handlleLogout=()=>{
   </Container>
 
    
-     <nav className='navbar navbar-expand-lg  p-3   ' >
-     <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
+     <nav className='navbar navbar-expand-lg  py-3  ' >
+    
+          <div className='container-fluid '  >
+         
+          <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
      </Button>
-          <div className='container-fluid justify-content-end collapse navbar-collapse  'id="navbarNav"  >
-            <ul className='navbar-nav ' style={{fontSize:'20px',fontWeight:'500',gap:'10px'}}>
+     <div className='collapse navbar-collapse ' id="navbarNav">
+        <ul className='navbar-nav  ' style={{fontSize:'20px',fontWeight:'500'}}>
               <li className='nav-item'>
                <Link className='nav-link' to='/ShoppingCart/'>Home</Link> 
                </li>
@@ -65,7 +68,7 @@ const handlleLogout=()=>{
                </li>
                 
             </ul>
-
+            </div>
             </div>
 
 
