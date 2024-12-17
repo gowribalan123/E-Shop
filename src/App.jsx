@@ -4,6 +4,8 @@ import { BrowserRouter as Router,Routes,Route,Link,Navigate } from 'react-router
 import Home from './components/Home.jsx';
 import Product from './components/Product.jsx';  
 import Login from './components/Login.jsx';
+import SignUp from './components/SignUp.jsx';
+
 import { Nav,Container, Row, Col,Navbar} from 'react-bootstrap';
 import Button  from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';  
@@ -55,6 +57,9 @@ const handlleLogout=()=>{
                <li className='nav-item'>
                <Link className='nav-link' to='/ShoppingCart/product'>Product</Link> 
                </li>
+               <li className='nav-item'>
+               <Link className='nav-link' to='/ShoppingCart/signup'>SignUp</Link> 
+               </li>
                <li className='nav-item' style={{alignItems:'center' }}>
                 {!isAuthenticated?(
                 <Link className='nav-link' to='/ShoppingCart/login'>
@@ -84,6 +89,7 @@ const handlleLogout=()=>{
      <Routes>
 
           <Route   path='/ShoppingCart/' element={<Home/>}/>
+          <Route   path='/ShoppingCart/signup' element={<SignUp/>}/>
           <Route  path='/ShoppingCart/login' element={<Login  onLogin={handleLogin}/>}/>
           <Route path='/ShoppingCart/product' 
           element={<ProtectedRoute isAuthenticated={isAuthenticated}>

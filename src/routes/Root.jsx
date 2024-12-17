@@ -7,6 +7,7 @@ import Product from '../components/Product.jsx';
 //import ProductList from '../components/ProductList.jsx';  
 import Login from '../components/Login.jsx';
 import Navigation from '../components/Navigation.jsx';
+import SignUp from '../components/SignUp.jsx';
 
 
 const [isAuthenticated,setIsAuthenticated]=useState(false)
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
 
       <Route path="/ShoppingCart/" element={<Navigation/>} >
          <Route path="/ShoppingCart/" element={<Home/>}/>
+         <Route path="/ShoppingCart/signup" element={<SignUp/>}/>
         <Route path="/ShoppingCart/login" element={<Login  onLogin={handleLogin}/>}/>
 
          <Route path="/ShoppingCart/product"  element={<ProtectedRoute isAuthenticated={isAuthenticated}>

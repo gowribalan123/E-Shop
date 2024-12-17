@@ -31,46 +31,37 @@ const Login = ({onLogin}) => {
 
 
 
-    <div id="content" className="hero "  >
-   <div className="container "  >  
+    
+   <div className="login-container "  >  
       
-       <div className="page-content page-container " id="page-content">
-          <div className="padding " >
-             <div className="row  "  >
-                <div className="col-md-8" >
-                   <div className="card  "  style={{ height:'380px'}}>
-                      <div className="card-header  m-3 " ><h3>Login to your account</h3></div>
-                      <div className="card-body">
+      
+ <h2>Login to your account</h2>
+   
       <form onSubmit={handleSubmit(checkLogin)}>
 
-<div className="form-group">
- <label className="text-muted" for="exampleInputEmail1">
-   Email address </label><br />
-<input {...register("email")} type="email" className="m-1 " style={{width:'250px'}} placeholder='Enter email'/> <br />
+<div>
+ <label  for="exampleInputEmail1">
+   Email address </label>
+<input {...register("email")} type="email"  placeholder='Enter email'/> <br />
 <small id="emailHelp" className="form-text text-muted "  style={{fontSize:'small'}}>
 We don't share email with anyone</small>
-</div><br />
-<div className="form-group">
- <label className="text-muted" for="exampleInputPassword1">
+</div>
+<div >
+ <label  for="exampleInputPassword1">
    Password 
-   </label ><br />
-<input {...register("password")} type="password" className="m-1" style={{width:'250px'}}  placeholder='Enter password'/>  <br />
- <small id="passwordHelp" class="form-text text-muted"style={{fontSize:'small'}}>
+   </label >
+<input {...register("password")} type="password"   placeholder='Enter password'/>  <br />
+ <small id="passwordHelp" class="form-text text-muted" style={{fontSize:'small'}}>
 Your password is saved in encrypted form</small>
 </div>
 
  
-<button type="submit" className="btn btn-primary m-4" style={{width:'250px'
-}}>Login</button>
+<button type="submit" className="btn btn-primary"  >Login</button>
 </form>
 </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+                  
+            
+   
   
   )
 }
