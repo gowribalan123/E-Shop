@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';  
 import Product from '../components/Product';
-import Navigation from './Navigation';
+ 
 
 
 const Home = () => {

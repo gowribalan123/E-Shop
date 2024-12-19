@@ -25,12 +25,12 @@ const router = createBrowserRouter(
     createRoutesFromElements(
     
 
-      <Route path="/ShoppingCart/" element={<Navigation/>} >
-         <Route path="/ShoppingCart/" element={<Home/>}/>
-         <Route path="/ShoppingCart/signup" element={<SignUp/>}/>
-        <Route path="/ShoppingCart/login" element={<Login  onLogin={handleLogin}/>}/>
+      <Route path="/E-Shop/" element={<Navigation/>} >
+         <Route path="/E-Shop/" element={<Home/>}/>
+         <Route path="/E-Shop/signup" element={<SignUp/>}/>
+        <Route path="/E-Shop/login" element={<Login  onLogin={handleLogin}/>}/>
 
-         <Route path="/ShoppingCart/product"  element={<ProtectedRoute isAuthenticated={isAuthenticated}>
+         <Route path="/E-Shop/product"  element={<ProtectedRoute isAuthenticated={isAuthenticated}>
              <Product onLogout={handlleLogout}/>
           </ProtectedRoute>}
           />
