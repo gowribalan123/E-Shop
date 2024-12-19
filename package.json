@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "git remote add origin git@github.com:gowribalan123/E-Shop.git/",
+  "homepage": "",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
