@@ -1,81 +1,98 @@
 // src/SignUp.jsx
 import React, { useState } from 'react';
- import './SignUp.css'
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
+import '../components/SignUp.css'
 
-const SignUp = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+import { useNavigate } from 'react-router-dom';
 
-  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
-  const validate = () => {
-    let formErrors = {};
-    if (!formData.username) formErrors.username = 'Username is required';
-    if (!formData.email) formErrors.email = 'Email is required';
-    if (!formData.password) formErrors.password = 'Password is required';
-    return formErrors;
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formErrors = validate();
-    if (Object.keys(formErrors).length === 0) {
-      console.log('Form submitted successfully', formData);
-      // Handle form submission (e.g., send data to server)
-    } else {
-      setErrors(formErrors);
-    }
-  };
+
+const SignUp = ({onSignUp}) => {
+           const {register,handleSubmit,formState:{errors},reset} = useForm();
+
+            const apiUrl=import.meta.env.VITE_PRODUCTS_API
+             const navigate=useNavigate()
+
+
+      const checkRegister = async (data) => {  
+        try {    
+      
+          const response = await axios.post(`${apiUrl}/users`, data);  
+          console.log(response.data);  
+          alert("Registration Successful");  
+          reset();  // Clear form fields on successful registration  
+          navigate('/ShoppingCart/login');  
+        } catch (error) {  
+          console.error(error);  
+          alert("Registration Failed. Please try again."); // User feedback  
+        }  
+      }  
 
   return (
-    <div className="signup-container    ">
+    <>
+    <header style={{height:'530px',padding:'15px'}}>
+  
+    <div className="signup-container"  style={{backgroundColor:'white'}} >
+   
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p className="error">{errors.username}</p>}
+
+
+      <form onSubmit={handleSubmit(checkRegister)}>
+      
+      <div>
+          <label htmlFor="name">Name:</label>
+          <input  id="name"  {...register("name", { required: 'Name is required' })}  type="text"  placeholder='Enter name'/>
+           
+          {errors.name && <p className="error">{errors.name.message}</p>}  
+          
         </div>
+
         <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
+          <label htmlFor="username">Username:</label>
+          <input  id="username" {...register("username", { required: 'Username is required' })}  type="text" placeholder='Enter username'/>
+           
+           
+          {errors.username && <p className="error">{errors.username.message}</p>}
         </div>
+
+
+
         <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
+          <label htmlFor="email">Email address:</label>
+          <input  id="email" {...register("email", { required: 'Email is required' })} type="email"  placeholder='Enter email'/>
+         
+          {errors.email && <p className="error">{errors.email.message}</p>}
         </div>
-        <button type="submit">Sign Up</button>
+
+
+
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input  id="password" {...register("password", { required: 'Password is required',minLength: {value: 6, message: 'Password must be at least 6 characters'} })} type="password"  placeholder='Enter password'/>
+            
+          {errors.password && <p className="error">{errors.password.message}</p>}
+        </div>
+
+
+        <button type="submit"  className="btn btn-primary">Sign Up</button>
+       
+       
+   {/*
+        <div>
+        <label htmlFor="confirmpassword"> Confirm Password:</label>
+        <input id="confirmpassword" {...register("confirmpassword", { required: 'Confirm Password is required' })}  type="password" name="confirmPassword" placeholder="Enter Confirm Password" value={data.confirmPassword} onChange={handleChange} />  
+      {errors.confirmPassword && <span>{errors.confirmPassword}</span>}  
+      </div>
+       <button type="button" onClick={handleClear}>Clear</button>  
+       */}
       </form>
     </div>
-  );
-};
+    </header>
+    </>
+  )
+}
 
 export default SignUp;

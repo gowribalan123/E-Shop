@@ -1,72 +1,88 @@
-import React from 'react'
-import axios from 'axios'
-import { useForm } from 'react-hook-form'
+import React, { useEffect, useState } from 'react';  
+import axios from 'axios';  
+import { useForm } from 'react-hook-form';  
 import 'bootstrap/dist/css/bootstrap.min.css';  
+import '../components/Login.css';  
+import { useNavigate } from 'react-router-dom';  
 
-import '../components/Login.css'
-import { useNavigate } from 'react-router-dom';
+const Login = ({ onLogin }) => {  
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();  
+    const apiUrl = import.meta.env.VITE_PRODUCTS_API;  
+    const navigate = useNavigate();  
+    const [loading, setLoading] = useState(false);  
+    const [loginError, setLoginError] = useState('');  
 
+    // Reset form fields when the component mounts  
+    useEffect(() => {  
+      console.log("Resetting form state"); 
+        reset(); // This will set form fields to be empty  
+    }, [reset]);  
 
-//import { Container, Row, Col } from 'react-bootstrap';
-const Login = ({onLogin}) => {
+    const checkLogin = async (data) => {  
+        setLoading(true);  
+        setLoginError('');  
+        try {  
+            const response = await axios.post(`${apiUrl}/users/login`, data);  
+            console.log(response.data);  
+            // Handle successful login  
+            onLogin();  
+            navigate('/ShoppingCart/product');  
+            alert("Login successful");  
+            reset(); // Clear form fields on successful login  
+        } catch (error) {  
+            console.error(error);  
+            setLoginError("Login Failed. Please try again."); // Set error message for UI  
+        } finally {  
+            setLoading(false);  
+        }  
+    };  
 
-    const {register,handleSubmit,formState:{errors}} = useForm();
+    return (  
+        <>  
+            <header className="" style={{ height: '530px' }}>  
+                <br /><br />  
+                <div className="login-container" style={{ backgroundColor: 'white' }}>  
+                    <h2>Login to your account</h2>  
+                    <form onSubmit={handleSubmit(checkLogin)}>  
+                        <div>  
+                            <label htmlFor="email">Email address</label>  
+                            <input  
+                                id="email"  
+                                {...register("email", { required: 'Email is required' })}  
+                                type="email"  
+                                placeholder='Enter email'  
+                            />  
+                            <br />  
+                            {errors.email && <p>{errors.email.message}</p>}  
+                            <small id="emailHelp" className="form-text text-muted" style={{ fontSize: 'small' }}>  
+                                We don't share email with anyone  
+                            </small>  
+                        </div>  
 
-   const apiUrl=import.meta.env.VITE_PRODUCTS_API
-   
-    const navigate=useNavigate()
-    const checkLogin = (data)=>{
-      console.log("Form data",data)
-      axios.post(`${apiUrl}/users/login`,data)
-      .then(response=>{
-        console.log(response.data)
-        onLogin()
-        navigate('/ShoppingCart/product')
+                        <div>  
+                            <label htmlFor="password">Password</label>  
+                            <input  
+                                id="password"  
+                                {...register("password", { required: 'Password is required' })}  
+                                type="password"  
+                                placeholder='Enter password'  
+                            />  
+                            <br />  
+                            {errors.password && <p>{errors.password.message}</p>}  
+                            <small id="passwordHelp" className="form-text text-muted" style={{ fontSize: 'small' }}>  
+                                Your password is saved in encrypted form  
+                            </small>  
+                        </div>  
 
-        alert("Login successful")
-      })
-      .catch(eror=>console.log(error))
-    }
-  return (
+                        {loginError && <p className="text-danger">{loginError}</p>}  
+                        <button type="submit" className="btn btn-primary" disabled={loading}>  
+                            {loading ? 'Logging in...' : 'Login'}  
+                        </button>  
+                    </form>  
+                </div>  
+            </header>  
+        </>  
+    );  
+};  
 
-
-
-    
-   <div className="login-container "  >  
-      
-      
- <h2>Login to your account</h2>
-   
-      <form onSubmit={handleSubmit(checkLogin)}>
-
-<div>
- <label  for="exampleInputEmail1">
-   Email address </label>
-<input {...register("email")} type="email"  placeholder='Enter email'/> <br />
-<small id="emailHelp" className="form-text text-muted "  style={{fontSize:'small'}}>
-We don't share email with anyone</small>
-</div>
-<div >
- <label  for="exampleInputPassword1">
-   Password 
-   </label >
-<input {...register("password")} type="password"   placeholder='Enter password'/>  <br />
- <small id="passwordHelp" class="form-text text-muted" style={{fontSize:'small'}}>
-Your password is saved in encrypted form</small>
-</div>
-
- 
-<button type="submit" className="btn btn-primary"  >Login</button>
-</form>
-</div>
-                  
-            
-   
-  
-  )
-}
-
-
-
-
-export default Login
+export default Login;

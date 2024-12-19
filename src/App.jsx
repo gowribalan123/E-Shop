@@ -41,7 +41,7 @@ const handlleLogout=()=>{
   </Container>
 
    
-     <nav className='navbar navbar-expand-lg  py-3  ' >
+     <nav className='navbar navbar-expand-lg  p-3  ' >
     
           <div className='container-fluid '  >
          
@@ -98,16 +98,13 @@ const handlleLogout=()=>{
           />
      </Routes>
     </Router>
+
+
     <footer >
-      <Container id="footer" className="bg-body-tertiary   " >
-        <Row>
-          <Col >
-          
+    
         
             <p>© {new Date().getFullYear()} Gowri . All rights reserved.</p>
-          </Col>
-        </Row>
-      </Container>
+         
     </footer>
     </>
   )
