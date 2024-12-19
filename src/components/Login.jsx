@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
             console.log(response.data);  
             // Handle successful login  
             onLogin();  
-            navigate('/ShoppingCart/product');  
+            navigate('/E-Shop/product');  
             alert("Login successful");  
             reset(); // Clear form fields on successful login  
         } catch (error) {  

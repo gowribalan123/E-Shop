@@ -24,7 +24,7 @@ const SignUp = ({onSignUp}) => {
           console.log(response.data);  
           alert("Registration Successful");  
           reset();  // Clear form fields on successful registration  
-          navigate('/ShoppingCart/login');  
+          navigate('/E-Shop/login');  
         } catch (error) {  
           console.error(error);  
           alert("Registration Failed. Please try again."); // User feedback  

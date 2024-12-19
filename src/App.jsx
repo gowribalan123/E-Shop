@@ -52,17 +52,17 @@ const handlleLogout=()=>{
      <div className='collapse navbar-collapse ' id="navbarNav">
         <ul className='navbar-nav  ' style={{fontSize:'20px',fontWeight:'500'}}>
               <li className='nav-item'>
-               <Link className='nav-link' to='/ShoppingCart/'>Home</Link> 
+               <Link className='nav-link' to='/E-Shop/'>Home</Link> 
                </li>
                <li className='nav-item'>
-               <Link className='nav-link' to='/ShoppingCart/product'>Product</Link> 
+               <Link className='nav-link' to='/E-Shop/product'>Product</Link> 
                </li>
                <li className='nav-item'>
-               <Link className='nav-link' to='/ShoppingCart/signup'>SignUp</Link> 
+               <Link className='nav-link' to='/E-Shop/signup'>SignUp</Link> 
                </li>
                <li className='nav-item' style={{alignItems:'center' }}>
                 {!isAuthenticated?(
-                <Link className='nav-link' to='/ShoppingCart/login'>
+                <Link className='nav-link' to='/E-Shop/login'>
                    <Button  variant="primary"   style={{fontSize:'18px',fontWeight:'500',backgroundColor:' rgb(54, 54, 98)'}}>LOGIN       </Button>
                    </Link>
                 ):(
@@ -87,11 +87,11 @@ const handlleLogout=()=>{
 
 
      <Routes>
-
-          <Route   path='/ShoppingCart/' element={<Home/>}/>
-          <Route   path='/ShoppingCart/signup' element={<SignUp/>}/>
-          <Route  path='/ShoppingCart/login' element={<Login  onLogin={handleLogin}/>}/>
-          <Route path='/ShoppingCart/product' 
+     
+          <Route   path='/E-Shop/' element={<Home/>}/>
+          <Route   path='/E-Shop/signup' element={<SignUp/>}/>
+          <Route  path='/E-Shop/login' element={<Login  onLogin={handleLogin}/>}/>
+          <Route path='/E-Shop/product' 
           element={<ProtectedRoute isAuthenticated={isAuthenticated}>
              <Product  onLogout={handlleLogout}/>
           </ProtectedRoute>}
@@ -110,6 +110,6 @@ const handlleLogout=()=>{
   )
 }
 function ProtectedRoute({isAuthenticated,children}){
-  return isAuthenticated?children:<Navigate to="/ShoppingCart/login"/>
+  return isAuthenticated?children:<Navigate to="/E-Shop/login"/>
 }
 export default App
