@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://gowribalan123.github.io/E-Shop/",
+  
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
