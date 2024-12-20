@@ -35,7 +35,7 @@ const SignUp = ({onSignUp}) => {
     <>
     <header style={{height:'530px',padding:'15px'}}>
   
-    <div className="signup-container"  style={{backgroundColor:'white'}} >
+    <div className="signup-container"  style={{backgroundColor:'white',width:'400px'}} >
    
       <h2>Sign Up</h2>
 

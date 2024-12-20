@@ -8,20 +8,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-
+  
     
      
     
   }
-  .head{
-    background-color: beige;
-    color: rgb(54, 54, 98);
-    padding: 20px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   
-    align-items: center;
-    text-align: center;
-  }
+
   header {
     background-color: #8781d6e3;
   
@@ -48,22 +40,16 @@ body {
     color: #ffc107;
   }
   
-  main {
-    padding: 20px;
-    text-align: center;
-    justify-content: center; 
-    align-items: center;
-    
-   
-  
-  }
+
   
   footer {
    
     
     color: hsl(0, 3%, 15%);
     text-align: center;
-    padding: 35px ;
+    padding: 35px  ;
+    
+    
   
   
   

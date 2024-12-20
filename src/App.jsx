@@ -22,7 +22,9 @@ const handlleLogout=()=>{
 }
   return  (
     <>
+   
     <Router>
+  
     <header>
 
 <Navbar className="bg-body-tertiary   " >
@@ -99,13 +101,14 @@ const handlleLogout=()=>{
      </Routes>
     </Router>
 
-
+  
     <footer >
     
         
             <p>© {new Date().getFullYear()} Gowri . All rights reserved.</p>
          
     </footer>
+  
     </>
   )
 }
