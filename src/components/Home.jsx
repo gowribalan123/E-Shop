@@ -9,7 +9,7 @@ import Product from '../components/Product';
 const Home = () => {
   return (
   <>
-    <header className="hero " style={{height:'530px'}}>
+    <header className="hero" style={{height:'560px'}}>
     <div className="container m-5 ">
         <h1>Welcome to My E-commerce Store</h1>
         <p>Find the best products at unbeatable prices!</p>

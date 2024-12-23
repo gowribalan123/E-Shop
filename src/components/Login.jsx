@@ -38,10 +38,10 @@ const Login = ({ onLogin }) => {
     };  
 
     return (  
-        <>  
-            <header className="" style={{ height: '530px' }}>  
+    <>  
+            <header className="" style={{ height: '560px' }}>  
                 <br /><br />  
-                <div className="login-container" style={{ backgroundColor: 'white' }}>  
+                <div className="login-container " style={{ backgroundColor: 'white' }}>  
                     <h2>Login to your account</h2>  
                     <form onSubmit={handleSubmit(checkLogin)}>  
                         <div>  
@@ -82,7 +82,7 @@ const Login = ({ onLogin }) => {
                 </div>  
             </header>  
         </>  
-    );  
-};  
+    ) 
+} 
 
 export default Login;

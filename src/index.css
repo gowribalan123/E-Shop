@@ -15,7 +15,7 @@ body {
   }
 
   header {
-    background-color: #8781d6e3;
+    background-color: #e5e4f7e3;
   
   }
   
@@ -41,13 +41,13 @@ body {
   }
   
 
-  
+
   footer {
    
     
     color: hsl(0, 3%, 15%);
     text-align: center;
-    padding: 35px  ;
+    padding: 25px  ;
     
     
   

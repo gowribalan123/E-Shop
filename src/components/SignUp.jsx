@@ -33,9 +33,9 @@ const SignUp = ({onSignUp}) => {
 
   return (
     <>
-    <header style={{height:'530px',padding:'15px'}}>
-  
-    <div className="signup-container"  style={{backgroundColor:'white',width:'400px'}} >
+    <header className='' style={{height:'560px',padding:'15px'}}>
+  <br />
+    <div className="signup-container  "  style={{backgroundColor:'white',width:'400px'}} >
    
       <h2>Sign Up</h2>
 

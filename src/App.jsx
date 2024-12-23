@@ -6,7 +6,7 @@ import Product from './components/Product.jsx';
 import Login from './components/Login.jsx';
 import SignUp from './components/SignUp.jsx';
 
-import { Nav,Container, Row, Col,Navbar} from 'react-bootstrap';
+import { Nav,Container,Navbar} from 'react-bootstrap';
 import Button  from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 
@@ -20,18 +20,22 @@ const handleLogin=()=>{
 const handlleLogout=()=>{
   setIsAuthenticated(false)
 }
+
+ 
   return  (
     <>
    
     <Router>
   
-    <header>
+    <header className=''>
 
-<Navbar className="bg-body-tertiary   " >
 
-<Container >
-         <Navbar.Brand >
-            <img
+   
+     <nav className='navbar navbar-expand-lg  navbar-light bg-light p-3  my-auto' >
+    
+          <div className='container-fluid '  >
+          <a class="navbar-brand logo " href="#">  
+          <img
               src="cart-icon-2.png"
               width="40"
               height="50"
@@ -39,20 +43,21 @@ const handlleLogout=()=>{
               alt="Profile logo"
             /><span style={{ color: "blue",fontWeight:'500px',fontSize:'40px' }}>ShopEase</span>
              
-           </Navbar.Brand>
-  </Container>
-
-   
-     <nav className='navbar navbar-expand-lg  p-3  ' >
-    
-          <div className='container-fluid '  >
+             </a>
+                      
          
-          <Button className="navbar-toggler bg-light btn btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
+          <button  className="navbar-toggler bg-light btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        
+     
                         <span className="navbar-toggler-icon"></span>
-     </Button>
-     <div className='collapse navbar-collapse ' id="navbarNav">
-        <ul className='navbar-nav  ' style={{fontSize:'20px',fontWeight:'500'}}>
+     </button>
+ 
+   
+
+     <div className='collapse navbar-collapse' id='navbarNav'>
+     
+        <ul className='navbar-nav ms-auto' style={{fontSize:'20px',fontWeight:'500'}}>
               <li className='nav-item'>
                <Link className='nav-link' to='/E-Shop/'>Home</Link> 
                </li>
@@ -65,22 +70,24 @@ const handlleLogout=()=>{
                <li className='nav-item' style={{alignItems:'center' }}>
                 {!isAuthenticated?(
                 <Link className='nav-link' to='/E-Shop/login'>
-                   <Button  variant="primary"   style={{fontSize:'18px',fontWeight:'500',backgroundColor:' rgb(54, 54, 98)'}}>LOGIN       </Button>
+                   <button  className='btn btn-primary'   style={{fontSize:'18px',fontWeight:'500',backgroundColor:' rgb(54, 54, 98)'}}>LOGIN       </button>
                    </Link>
                 ):(
-                  <Button variant="primary" onClick={handlleLogout}   width='50px' style={{fontSize:'18px',fontWeight:'500',backgroundColor:' rgb(54, 54, 98)'}}  >Logout</Button>
+                  <button className='btn btn-primary' onClick={handlleLogout}   width='50px' style={{fontSize:'18px',fontWeight:'500',backgroundColor:' rgb(54, 54, 98)'}}  >Logout</button>
                 
                 )}
               
                </li>
                 
             </ul>
+              
             </div>
+   
             </div>
 
-
+      
      </nav>
-     </Navbar>
+     
 
 </header>
 

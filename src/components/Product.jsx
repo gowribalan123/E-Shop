@@ -24,6 +24,8 @@ const Product = () => {
 
   return (  
 <>
+
+<header className="hero" style={{height:'560px'}}>
     <div className="container  p-4"  style={{backgroundColor:'#8781d6e3'}}>  
       
       <div className=" row text-center    " >  
@@ -43,8 +45,10 @@ const Product = () => {
           </div>  
         ))}  
       </div>  
-    </div>  
+    </div>
+    </header>  
     </>
+
   );  
 };  
 
