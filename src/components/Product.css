@@ -9,6 +9,13 @@
   color: #fff;
   
 }
+
+@media only screen and (max-width:500px) and (max-width:700px) 
+ {
+
+   
+  
+}
 .product{
     font-family: Arial, sans-serif;
     color: #333;
