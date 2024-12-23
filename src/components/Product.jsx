@@ -28,7 +28,7 @@ const Product = () => {
   return (  
     <>
     <header className="" style={{ padding: '15px' }}>  
-      <div className="container p-4" style={{ background: '#583059' }}>  
+      <div className="container p-4" style={{   background: 'linear-gradient(to right, #7g5ccf, #b0a0b0)',width:'100%' }}>  
         <div className="row text-center">  
           {loading && <div className="col-12">Loading products...</div>}  
           {error && <div className="col-12 alert alert-danger">{error}</div>}  
